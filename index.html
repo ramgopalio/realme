@@ -1,9 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Realme Approval's</title>
+  <title>Realme Approval</title>
   <meta charset="utf-8">
-<!--  <meta name="viewport" content="width=device-width, initial-scale=1">-->
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
@@ -12,73 +11,106 @@
 <body>
 
 <div class="container">
-  <h2>Aprroval Status</h2>
-  <p>Type in the input field to search the approval status for SC Code, SC Name or Mobile Number</p>
+  <h2>Approval Status</h2>
+  <p>Type in the input field to search the approval status for SC Code, SC Name, or Mobile Number</p>
 
-  <input class="form-control" id="myInput" type="text" placeholder="Search..with SC Code, SC Name or Mobile Number">
+  <div id="loginForm">
+    <input class="form-control" id="username" type="text" placeholder="Username">
+    <input class="form-control" id="password" type="password" placeholder="Password">
+    <button class="btn btn-primary" id="loginBtn">Login</button>
+  </div>
 
-  <br>
+  <div id="dataContainer" style="display: none;">
+    <input class="form-control" id="myInput" type="text" placeholder="Search..with SC Code, SC Name, or Mobile Number">
+    <br>
+    <table class="table table-bordered table-striped">
+      <thead>
+      <tr>
+        <th>E-Mail</th>
+        <th>Mobile Number</th>
+        <th>SC Code</th>
+        <th>SC Name</th>
+        <th>State</th>
+        <th>City</th>
+        <th>RCSM ID (Engineer's ID)</th>
+        <th>Mac Address</th>
+        <th>Status</th>
+      </tr>
+      </thead>
+      <tbody id="myTable">
+      <!-- Data Rows -->
+      </tbody>
+    </table>
+  </div>
 
-  <table class="table table-bordered table-striped">
-
-    <thead>
-      <tr><th>E-Mail</th><th>Mobile Number</th><th>SC Code</th><th>SC Name</th><th>State</th><th>City</th><th>RCSM ID (Engineer's ID)</th><th>Mac Address</th><th>Status</th></tr>
-    </thead>
-
-    <tbody id="myTable">
-
-<!--    feedfile data-->
-
-<!--feedfile r1-->
-<tr>	<th>sakshamtelecomsgnr@gmail.com</th>	<th>7823010008</th>	<th>IN61-036</th>	<th>VMS-S R Quick Solutions (Sriganganagar, Rajasthan)</th>	<th>Rajasthan</th>	<th>Sriganganagar</th>	<th>IND02240</th>	<th>FA-E2-6B-62-14-62</th>	<th>Approved</th>	</tr>
-<tr>	<th>rrindianetwork90@gmail.com</th>	<th>9784952990</th>	<th>IN61-007</th>	<th>Vms-Rr India Network (Jaipur, Rajasthan)</th>	<th>Rajasthan</th>	<th>Jaipur</th>	<th>INR01723</th>	<th>80-E8-2C-93-03-61</th>	<th>Approved</th>	</tr>
-<tr>	<th>omcomm2022@gmail.com</th>	<th>7417736990</th>	<th>IN61-010</th>	<th>Vms-Om Communication (Muzaffarnagar, Uttar Pradesh)</th>	<th>Uttar Pradesh</th>	<th>Muzaffarnagar</th>	<th>INE02837</th>	<th>00-FF-60-12-D1-BE</th>	<th>Approved</th>	</tr>
-<tr>	<th>shiv.shambhu0565@gmail.com</th>	<th>7088999900</th>	<th>IN61-072</th>	<th>VMS-Shiv Shambhu Repairing Service Centre (Mathura, Uttarpradesh)</th>	<th>Uttar Pradesh</th>	<th>Mathura</th>	<th>INW00786</th>	<th>5C-87-9C-E4-57-EA</th>	<th>Approved</th>	</tr>
-<tr>	<th>mobilesolutionthakur@gmail.com</th>	<th>9415524719</th>	<th>IN61-026</th>	<th>Vms-Mobile Solution (Gonda, Uttar Pradesh)</th>	<th>Uttar Pradesh</th>	<th>Gonda</th>	<th>INE02836</th>	<th>00-FF-70-40-01-8B</th>	<th>Approved</th>	</tr>
-<tr>	<th>aradhyaent88@gmail.com</th>	<th>7275106664</th>	<th>IN61-005</th>	<th>Vms-Aradhya Enterprises(Orai, Uttar Pradesh)</th>	<th>Uttar Pradesh</th>	<th>Orai</th>	<th>INR01722</th>	<th>FA-E2-6B-62-14-62</th>	<th>Approved</th>	</tr>
-<tr>	<th>maavashnavitraders9@gmail.com</th>	<th>9838095209</th>	<th>IN61-011</th>	<th>Vms-Maa Vashmavi Traders (Mahoba, Uttar Pradesh)</th>	<th>Uttar Pradesh</th>	<th>Mahoba</th>	<th>INE02835</th>	<th>80-E8-2C-93-03-61</th>	<th>Rejected</th>	</tr>
-<tr>	<th>microsysdgp@gmail.com</th>	<th>0343-2588750</th>	<th>IN61-029</th>	<th>VMS-Microsys (Durgapura, West Bengal)</th>	<th>West Bengal</th>	<th>Durgapur</th>	<th>IND02239</th>	<th>00-FF-60-12-D1-BE</th>	<th>Rejected</th>	</tr>
-<tr>	<th>akash.patole@myoas.com</th>	<th>9209382350</th>	<th>E13</th>	<th>realme ESC West Maharashtra Pimpri</th>	<th>Maharashtra</th>	<th>Pimpri</th>	<th>INR01721</th>	<th>5C-87-9C-E4-57-EA</th>	<th>Rejected</th>
-<tr>	<th>creativeindia1500@gmail.com</th>	<th>8866360616</th>	<th>IN16-426</th>	<th>Servex-Creative Communication(Gandhinagar, Gujarat)</th>	<th>Gujarat</th>	<th>Gandhinagar</th>	<th>INR01720</th>	<th>00-FF-70-40-01-8B</th>	<th>Rejected</th> </tr>
-<!--feedfile r2-->
-
-
-<!--    feefile uploading done-->
-    </tbody>
-  </table>
-
-  
-  <p>For any other approval status please reach to Siva Kumar E-Mail ID sivakumar@realme.com</p>
+  <p>For any other approval status, please reach out to Siva Kumar at sivakumar@realme.com</p>
 </div>
-
-<!--<script>-->
-<!--$(document).ready(function(){-->
-<!--  $("#myInput").on("keyup", function() {-->
-<!--    var value = $(this).val().toLowerCase();-->
-<!--    $("#myTable tr").filter(function() {-->
-<!--      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)-->
-<!--    });-->
-<!--  });-->
-<!--});-->
-<!--</script>-->
-
 
 <script>
 $(document).ready(function(){
-  // Hide the table initially
-  $("#myTable").hide();
+  // Data array for users and corresponding data
+  var userData = [
+    { username: "IN61-001", password: "Test_2424", data: [
+      { email: "user1@gmail.com", mobile: "9989894894", scCode: "IN61-001", scName: "SC1", state: "State1", city: "City1", rcsmId: "ID1", macAddress: "MAC1", status: "Approved" },
+      { email: "user1@gmail.com", mobile: "9989894894", scCode: "IN61-001", scName: "SC1", state: "State1", city: "City1", rcsmId: "ID1", macAddress: "MAC1", status: "Approved" },
 
+      // More data for user1...
+    ]},
+    { username: "user2", password: "password2", data: [
+      { email: "user2@gmail.com", mobile: "9876543210", scCode: "IN61-002", scName: "SC2", state: "State2", city: "City2", rcsmId: "ID2", macAddress: "MAC2", status: "Approved" },
+      // More data for user2...
+    ]},
+    // Add more users as needed...
+  ];
+
+  // Function to display the data for the authenticated user
+  function displayUserData(username) {
+    var user = userData.find(function(user) {
+      return user.username === username;
+    });
+
+    if (user) {
+      var dataRows = "";
+      user.data.forEach(function(data) {
+        dataRows += "<tr>";
+        dataRows += "<td>" + data.email + "</td>";
+        dataRows += "<td>" + data.mobile + "</td>";
+        dataRows += "<td>" + data.scCode + "</td>";
+        dataRows += "<td>" + data.scName + "</td>";
+        dataRows += "<td>" + data.state + "</td>";
+        dataRows += "<td>" + data.city + "</td>";
+        dataRows += "<td>" + data.rcsmId + "</td>";
+        dataRows += "<td>" + data.macAddress + "</td>";
+        dataRows += "<td>" + data.status + "</td>";
+        dataRows += "</tr>";
+      });
+
+      $("#myTable").html(dataRows);
+      $("#loginForm").hide();
+      $("#dataContainer").show();
+    }
+  }
+
+  // Event handler for login button click
+  $("#loginBtn").on("click", function() {
+    var username = $("#username").val();
+    var password = $("#password").val();
+
+    // Perform basic authentication
+    var authenticatedUser = userData.find(function(user) {
+      return user.username === username && user.password === password;
+    });
+
+    if (authenticatedUser) {
+      displayUserData(username);
+    } else {
+      alert("Invalid username or password");
+    }
+  });
+
+  // Search functionality (same as before)
   $("#myInput").on("keyup", function() {
     var value = $(this).val().toLowerCase();
-
-    // Show or hide the table based on search input
-    if (value !== "") {
-      $("#myTable").show();
-    } else {
-      $("#myTable").hide();
-    }
-
-    // Filter and display the matching rows
     $("#myTable tr").filter(function() {
       $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
     });

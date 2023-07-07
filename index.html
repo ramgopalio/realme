@@ -1,179 +1,238 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <title>Realme Approval</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <title>Realme Approval</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
-    <style>
-    html, body {
-            height: 100%;
-            margin: 0;
-            display: flex;
-            justify-content: center;
+        <style>
+        html, body {
+                height: 100%;
+                margin: 0;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
             align-items: center;
-        }
-        align-items: center;
-        justify-content: center;
+            justify-content: center;
 
 
-        }
-        .centered-text {
-            text-align: center;
-        }
-        .italic-small {
-            font-style: italic;
-            font-size: small;
+            }
+            .centered-text {
+                text-align: center;
+            }
+            .italic-small {
+                font-style: italic;
+                font-size: small;
 
-        }
-    </style>
-  </head>
-</head>
-<body>
+            }
+        </style>
+    </head>
+    </head>
+    <body>
 
-<div class="container">
-  <div class="centered-text">
-  <h2>Realme Central Approval Status System</h2>
-  <br>
-  <p>   </p>
+    <div class="container">
+        <div class="centered-text">
+            <h2>Realme Central Approval Status System</h2>
+            <br>
+            <p>   </p>
 
-    <div id="loginForm">
+            <div id="loginForm">
 
-      <input class="form-control" id="username" type="text" placeholder="Username" size="9" style="width: 200px;">
-      <br>
-      <input class="form-control" id="password" type="password" placeholder="Password" size="9" style="width: 200px;">
-      <br>
-      <button class="btn btn-primary" id="loginBtn">Login</button>
-    </div>
+                <input class="form-control" id="username" type="text" placeholder="Username" size="9" style="width: 200px;">
+                <br>
+                <input class="form-control" id="password" type="password" placeholder="Password" size="9" style="width: 200px;">
+                <br>
+                <button class="btn btn-primary" id="loginBtn">Login</button>
+            </div>
 
-  <div id="dataContainer" style="display: none;">
-    <br>
-    <button class="btn btn-primary" id="logoutBtn">Logout</button>
-    <br>
-    <input class="form-control" id="myInput" type="text" placeholder="Search..with SC Code, SC Name, or Mobile Number">
-    <br>
+            <div id="dataContainer" style="display: none;">
 
-    <table class="table table-bordered table-striped">
-      <thead>
-      <tr>
-        <th>E-Mail</th>
-        <th>Mobile Number</th>
-        <th>SC Code</th>
-        <th>SC Name</th>
-        <th>State</th>
-        <th>City</th>
-        <th>RCSM ID (Engineer's ID)</th>
-        <th>Mac Address</th>
-        <th>Status</th>
-      </tr>
-      </thead>
-      <tbody id="myTable">
-      <!-- Data Rows -->
-      </tbody>
-    </table>
-  </div>
+                <br>
+                <button class="btn btn-primary" id="logoutBtn">Logout</button>
 
-    <br>
+                <br>
 
-  <p9 class="italic-small"> For any user login issues, please reach out to  v-kotipatruni.sivakumar@realme.com </p9>
+                <h2> Flash Tool Access Request Approval Status</h2>
+                <p> Search below with MAC ID </p>
 
-</div>
+                <br>
+                <input class="form-control" id="myInput" type="text" placeholder="Enter MAC ID">
+                <br>
+                <!-- Add this inside the "dataContainer" div -->
+                <div id="createFormContainer">
+                    <div id="createFormContainer">
+                        <button class="btn btn-primary" id="createFormBtn">Submit Form</button>
+                    </div>
+                </div>
 
-<script>
-$(document).ready(function(){
-  var loggedInUser; // Stores the currently logged in user
+                <table class="table table-bordered table-striped">
+                    <thead>
+                    <tr>
+                        <th>E-Mail</th>
+                        <th>Mobile Number</th>
+                        <th>SC Code</th>
+                        <th>SC Name</th>
+                        <th>State</th>
+                        <th>City</th>
+                        <th>RCSM ID (Engineer's ID)</th>
+                        <th>Mac Address</th>
+                        <th>Status</th>
+                    </tr>
+                    </thead>
+                    <tbody id="myTable">
+                    <!-- Data Rows -->
+                    </tbody>
+                </table>
+            </div>
 
-  // Data array for users and corresponding data
-  var userData = [
-    { username: "admin", password: "siva", data: [
-      { email: "user1@gmail.com", mobile: "1234567890", scCode: "IN61-001", scName: "SC1", state: "State1", city: "City1", rcsmId: "ID1", macAddress: "MAC1", status: "Approved" },
-      // More data for user1...
-    ]},
-    { username: "useradmin", password: "siva", data: [
-      { email: "user@gmail.com", mobile: "9876543210", scCode: "IN61-002", scName: "SC2", state: "State2", city: "City2", rcsmId: "ID2", macAddress: "MAC2", status: "Approved" },
-      // More data for user2...
-    ]},
+            <br>
 
-    // Add more users as needed...
-  ];
+            <p9 class="italic-small"> For any user login issues, please reach out to  v-kotipatruni.sivakumar@realme.com </p9>
 
-  // Function to display the data for the authenticated user
-  function displayUserData(username) {
-    var user = userData.find(function(user) {
-      return user.username === username;
-    });
 
-    if (user) {
-      var dataRows = "";
-      user.data.forEach(function(data) {
-        dataRows += "<tr>";
-        dataRows += "<td>" + data.email + "</td>";
-        dataRows += "<td>" + data.mobile + "</td>";
-        dataRows += "<td>" + data.scCode + "</td>";
-        dataRows += "<td>" + data.scName + "</td>";
-        dataRows += "<td>" + data.state + "</td>";
-        dataRows += "<td>" + data.city + "</td>";
-        dataRows += "<td>" + data.rcsmId + "</td>";
-        dataRows += "<td>" + data.macAddress + "</td>";
-        dataRows += "<td>" + data.status + "</td>";
-        dataRows += "</tr>";
+        </div>
+
+        <script>
+  $(document).ready(function() {
+    var loggedInUser; // Stores the currently logged in user
+
+    // Data array for users and corresponding data
+    var userData = [
+      {
+        username: "ram",
+        password: "gopal",
+        data: [
+          {
+            email: "user1@gmail.com",
+            mobile: "1234567890",
+            scCode: "IN61-001",
+            scName: "SC1",
+            state: "State1",
+            city: "City1",
+            rcsmId: "ID1",
+            macAddress: "MAC1",
+            status: "Approved"
+          },
+          // More data for user1...
+        ]
+      },
+      {
+        username: "siva",
+        password: "kumar",
+        data: [
+          {
+            email: "user@gmail.com",
+            mobile: "9876543210",
+            scCode: "IN61-002",
+            scName: "SC2",
+            state: "State2",
+            city: "City2",
+            rcsmId: "ID2",
+            macAddress: "MAC2",
+            status: "Approved"
+          },
+          // More data for user2...
+        ]
+      }
+
+      // Add more users as needed...
+    ];
+
+    // Function to display the data for the authenticated user
+    function displayUserData(username) {
+      var user = userData.find(function(user) {
+        return user.username === username;
       });
 
-      $("#myTable").html(dataRows);
-      $("#loginForm").hide();
-      $("#dataContainer").show();
+      if (user) {
+        var dataRows = "";
+        user.data.forEach(function(data) {
+          dataRows += "<tr>";
+          dataRows += "<td>" + data.email + "</td>";
+          dataRows += "<td>" + data.mobile + "</td>";
+          dataRows += "<td>" + data.scCode + "</td>";
+          dataRows += "<td>" + data.scName + "</td>";
+          dataRows += "<td>" + data.state + "</td>";
+          dataRows += "<td>" + data.city + "</td>";
+          dataRows += "<td>" + data.rcsmId + "</td>";
+          dataRows += "<td>" + data.macAddress + "</td>";
+          dataRows += "<td>" + data.status + "</td>";
+          dataRows += "</tr>";
+        });
 
-      // Add the iframe with the specified URL
-
-    var iframeUrl = "https://docs.google.com/forms/d/e/1FAIpQLScJMOmNNOaoJyRbCzn7i0Sz2-ZLNMXa0PAJ2vyW7_zRPgr-og/viewform?embedded=true";
-    var iframe = '<iframe src="' + iframeUrl + '" width="70%" height="400px"> style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"</iframe>';
-    $("#dataContainer").append(iframe);
-
+        $("#myTable").html(dataRows);
+        $("#loginForm").hide();
+        $("#dataContainer").show();
+      }
     }
-  }
 
-  // Event handler for login button click
-  $("#loginBtn").on("click", function() {
-    var username = $("#username").val();
-    var password = $("#password").val();
+    // Event handler for login button click
+    $("#loginBtn").on("click", function() {
+      var username = $("#username").val();
+      var password = $("#password").val();
 
-    // Perform basic authentication
-    var authenticatedUser = userData.find(function(user) {
-      return user.username === username && user.password === password;
+      // Perform basic authentication
+      var authenticatedUser = userData.find(function(user) {
+        return user.username === username && user.password === password;
+      });
+
+      if (authenticatedUser) {
+        loggedInUser = username;
+        displayUserData(username);
+      } else {
+        alert("Invalid username or password");
+      }
     });
 
-    if (authenticatedUser) {
-      loggedInUser = username;
-      displayUserData(username);
-    } else {
-      alert("Invalid username or password");
-    }
-  });
+    // Event handler for logout button click
+    $("#logoutBtn").on("click", function() {
+      loggedInUser = undefined;
+      $("#myTable").html(""); // Clear the table
+      $("#dataContainer").hide();
+      $("#loginForm").show();
+      $("#username").val("");
+      $("#password").val("");
+    });
 
-  // Event handler for logout button click
-  $("#logoutBtn").on("click", function() {
-    loggedInUser = undefined;
-    $("#myTable").html(""); // Clear the table
-    $("#dataContainer").hide();
-    $("#loginForm").show();
-    $("#username").val("");
-    $("#password").val("");
-  });
+    // Search functionality (same as before)
+    $("#myInput").on("keyup", function() {
+      var value = $(this).val().toLowerCase();
+      $("#myTable tr").filter(function() {
+        $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1);
+      });
+    });
 
-  // Search functionality (same as before)
-  $("#myInput").on("keyup", function() {
-    var value = $(this).val().toLowerCase();
-    $("#myTable tr").filter(function() {
-      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    // Event handler for "Create Form" button click
+    $(document).on("click", "#createFormBtn", function() {
+      var popup = window.open(
+        "",
+        "FormPopup",
+        "width=800,height=600,scrollbars=yes,resizable=yes"
+      );
+
+      var iframeUrl =
+        "https://docs.google.com/forms/d/e/1FAIpQLScJMOmNNOaoJyRbCzn7i0Sz2-ZLNMXa0PAJ2vyW7_zRPgr-og/viewform?embedded=true";
+      var iframe =
+        '<iframe src="' +
+        iframeUrl +
+        '" width="100%" height="100%" style="border:0;"></iframe>';
+
+      popup.document.write(iframe);
+
+      var closePopupBtn =
+        '<button id="closePopupBtn">Close Popup</button>';
+      popup.document.write(closePopupBtn);
+
+      $(popup.document).on("click", "#closePopupBtn", function() {
+        popup.close();
+      });
     });
   });
-});
 </script>
 
-
-
-</body>
-</html>
+    </body>
+    </html>

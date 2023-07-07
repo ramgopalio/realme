@@ -1,14 +1,14 @@
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <title>Realme Approval</title>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Realme Approval</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
-        <style>
+    <style>
         html, body {
                 height: 100%;
                 margin: 0;
@@ -30,77 +30,77 @@
 
             }
         </style>
-    </head>
-    </head>
-    <body>
+</head>
+</head>
+<body>
 
-    <div class="container">
-        <div class="centered-text">
-            <h2>Realme Central Approval Status System</h2>
+<div class="container">
+    <div class="centered-text">
+        <h2>Realme Central Approval Status System</h2>
+        <br>
+        <p>   </p>
+
+        <div id="loginForm">
+
+            <input class="form-control" id="username" type="text" placeholder="Username" size="9" style="width: 200px;">
             <br>
-            <p>   </p>
-
-            <div id="loginForm">
-
-                <input class="form-control" id="username" type="text" placeholder="Username" size="9" style="width: 200px;">
-                <br>
-                <input class="form-control" id="password" type="password" placeholder="Password" size="9" style="width: 200px;">
-                <br>
-                <button class="btn btn-primary" id="loginBtn">Login</button>
-            </div>
-
-            <div id="dataContainer" style="display: none;">
-
-                <br>
-                <button class="btn btn-primary" id="logoutBtn">Logout</button>
-
-                <br>
-
-                <h2> Flash Tool Access Request Approval Status</h2>
-                <p> Search below with MAC ID </p>
-
-                <br>
-                <input class="form-control" id="myInput" type="text" placeholder="Enter MAC ID">
-                <br>
-                <!-- Add this inside the "dataContainer" div -->
-                <div id="createFormContainer">
-                    <div id="createFormContainer">
-                        <br>
-                        <button class="btn btn-primary" id="createFormBtn">Submit Form</button>
-                        <br>
-                    </div>
-                </div>
-
-                <table class="table table-bordered table-striped">
-                    <thead>
-                    <tr>
-                        <th>E-Mail</th>
-                        <th>Mobile Number</th>
-                        <th>SC Code</th>
-                        <th>SC Name</th>
-                        <th>State</th>
-                        <th>City</th>
-                        <th>RCSM ID (Engineer's ID)</th>
-                        <th>Mac Address</th>
-                        <th>Status</th>
-                    </tr>
-                    </thead>
-                    <tbody id="myTable">
-                    <!-- Data Rows -->
-                    </tbody>
-                </table>
-            </div>
-
+            <input class="form-control" id="password" type="password" placeholder="Password" size="9" style="width: 200px;">
             <br>
-
-
-            <p9 class="italic-small">Allow pop-up to submit form, if any user login issues, please reach out to  v-kotipatruni.sivakumar@realme.com  </p9>
-
-
-
+            <button class="btn btn-primary" id="loginBtn">Login</button>
         </div>
 
-        <script>
+        <div id="dataContainer" style="display: none;">
+
+            <br>
+            <button class="btn btn-primary" id="logoutBtn">Logout</button>
+
+            <br>
+
+            <h2> Flash Tool Access Request Approval Status</h2>
+            <p> Search below with MAC ID </p>
+
+            <br>
+            <input class="form-control" id="myInput" type="text" placeholder="Enter MAC ID">
+            <br>
+            <!-- Add this inside the "dataContainer" div -->
+            <div id="createFormContainer">
+                <div id="createFormContainer">
+                    <br>
+                    <button class="btn btn-primary" id="createFormBtn">Submit Form</button>
+                    <br>
+                </div>
+            </div>
+
+            <table class="table table-bordered table-striped">
+                <thead>
+                <tr>
+                    <th>E-Mail</th>
+                    <th>Mobile Number</th>
+                    <th>SC Code</th>
+                    <th>SC Name</th>
+                    <th>State</th>
+                    <th>City</th>
+                    <th>RCSM ID (Engineer's ID)</th>
+                    <th>Mac Address</th>
+                    <th>Status</th>
+                </tr>
+                </thead>
+                <tbody id="myTable">
+                <!-- Data Rows -->
+                </tbody>
+            </table>
+        </div>
+
+        <br>
+
+
+        <p9 class="italic-small">Allow pop-up to submit form, if any user login issues, please reach out to  v-kotipatruni.sivakumar@realme.com  </p9>
+
+
+
+    </div>
+
+    <script>
   $(document).ready(function() {
     var loggedInUser; // Stores the currently logged in user
 
@@ -237,6 +237,23 @@
     });
   });
 </script>
+    <br>
+    <div class="container text-center">
+        <p> <span id="ipAddress"></span></p>
+    </div>
 
-    </body>
-    </html>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+    $(document).ready(function() {
+      // Get the IP address using an API
+      $.getJSON("https://api.ipify.org?format=json", function(data) {
+        var ipAddress = data.ip;
+        $("#ipAddress").text(ipAddress);
+      });
+    });
+  </script>
+
+
+</body>
+</html>

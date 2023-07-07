@@ -3,7 +3,8 @@
 <head>
   <title>Realme Approval's</title>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+<!--  <meta name="viewport" content="width=device-width, initial-scale=1">-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
@@ -12,16 +13,24 @@
 
 <div class="container">
   <h2>Aprroval Status</h2>
-  <p>Type in the input field to search the approval status for SC Code, SC Name or Mobile Number:</p>  
-  <input class="form-control" id="myInput" type="text" placeholder="Search..with SC Code, SC Name or Mobile Number ">
+  <p>Type in the input field to search the approval status for SC Code, SC Name or Mobile Number</p>
+
+  <input class="form-control" id="myInput" type="text" placeholder="Search..with SC Code, SC Name or Mobile Number">
+
   <br>
+
   <table class="table table-bordered table-striped">
+
     <thead>
       <tr><th>E-Mail</th><th>Mobile Number</th><th>SC Code</th><th>SC Name</th><th>State</th><th>City</th><th>RCSM ID (Engineer's ID)</th><th>Mac Address</th><th>Status</th></tr>
     </thead>
+
     <tbody id="myTable">
+
 <!--    feedfile data-->
-    <tr>	<th>sakshamtelecomsgnr@gmail.com</th>	<th>7823010008</th>	<th>IN61-036</th>	<th>VMS-S R Quick Solutions (Sriganganagar, Rajasthan)</th>	<th>Rajasthan</th>	<th>Sriganganagar</th>	<th>IND02240</th>	<th>FA-E2-6B-62-14-62</th>	<th>Approved</th>	</tr>
+
+<!--feedfile r1-->
+<tr>	<th>sakshamtelecomsgnr@gmail.com</th>	<th>7823010008</th>	<th>IN61-036</th>	<th>VMS-S R Quick Solutions (Sriganganagar, Rajasthan)</th>	<th>Rajasthan</th>	<th>Sriganganagar</th>	<th>IND02240</th>	<th>FA-E2-6B-62-14-62</th>	<th>Approved</th>	</tr>
 <tr>	<th>rrindianetwork90@gmail.com</th>	<th>9784952990</th>	<th>IN61-007</th>	<th>Vms-Rr India Network (Jaipur, Rajasthan)</th>	<th>Rajasthan</th>	<th>Jaipur</th>	<th>INR01723</th>	<th>80-E8-2C-93-03-61</th>	<th>Approved</th>	</tr>
 <tr>	<th>omcomm2022@gmail.com</th>	<th>7417736990</th>	<th>IN61-010</th>	<th>Vms-Om Communication (Muzaffarnagar, Uttar Pradesh)</th>	<th>Uttar Pradesh</th>	<th>Muzaffarnagar</th>	<th>INE02837</th>	<th>00-FF-60-12-D1-BE</th>	<th>Approved</th>	</tr>
 <tr>	<th>shiv.shambhu0565@gmail.com</th>	<th>7088999900</th>	<th>IN61-072</th>	<th>VMS-Shiv Shambhu Repairing Service Centre (Mathura, Uttarpradesh)</th>	<th>Uttar Pradesh</th>	<th>Mathura</th>	<th>INW00786</th>	<th>5C-87-9C-E4-57-EA</th>	<th>Approved</th>	</tr>
@@ -29,22 +38,47 @@
 <tr>	<th>aradhyaent88@gmail.com</th>	<th>7275106664</th>	<th>IN61-005</th>	<th>Vms-Aradhya Enterprises(Orai, Uttar Pradesh)</th>	<th>Uttar Pradesh</th>	<th>Orai</th>	<th>INR01722</th>	<th>FA-E2-6B-62-14-62</th>	<th>Approved</th>	</tr>
 <tr>	<th>maavashnavitraders9@gmail.com</th>	<th>9838095209</th>	<th>IN61-011</th>	<th>Vms-Maa Vashmavi Traders (Mahoba, Uttar Pradesh)</th>	<th>Uttar Pradesh</th>	<th>Mahoba</th>	<th>INE02835</th>	<th>80-E8-2C-93-03-61</th>	<th>Rejected</th>	</tr>
 <tr>	<th>microsysdgp@gmail.com</th>	<th>0343-2588750</th>	<th>IN61-029</th>	<th>VMS-Microsys (Durgapura, West Bengal)</th>	<th>West Bengal</th>	<th>Durgapur</th>	<th>IND02239</th>	<th>00-FF-60-12-D1-BE</th>	<th>Rejected</th>	</tr>
-<tr>	<th>akash.patole@myoas.com</th>	<th>9209382350</th>	<th>E13</th>	<th>realme ESC West Maharashtra Pimpri</th>	<th>Maharashtra</th>	<th>Pimpri</th>	<th>INR01721</th>	<th>5C-87-9C-E4-57-EA</th>	<th>Rejected</th>	</tr>
-<tr>	"<th>creativeindia1500@gmail.com
-</th>"	<th>8866360616</th>	<th>IN16-426</th>	<th>Servex-Creative Communication(Gandhinagar, Gujarat)</th>	<th>Gujarat</th>	<th>Gandhinagar</th>	<th>INR01720</th>	<th>00-FF-70-40-01-8B</th>	<th>Rejected</th>	</tr>
+<tr>	<th>akash.patole@myoas.com</th>	<th>9209382350</th>	<th>E13</th>	<th>realme ESC West Maharashtra Pimpri</th>	<th>Maharashtra</th>	<th>Pimpri</th>	<th>INR01721</th>	<th>5C-87-9C-E4-57-EA</th>	<th>Rejected</th>
+<tr>	<th>creativeindia1500@gmail.com</th>	<th>8866360616</th>	<th>IN16-426</th>	<th>Servex-Creative Communication(Gandhinagar, Gujarat)</th>	<th>Gujarat</th>	<th>Gandhinagar</th>	<th>INR01720</th>	<th>00-FF-70-40-01-8B</th>	<th>Rejected</th> </tr>
+<!--feedfile r2-->
 
 
 <!--    feefile uploading done-->
     </tbody>
   </table>
+
   
-  <p>for any addational approval status please reach to Siva Kumaru E-Mail ID sivakumar@realme.com</p>
+  <p>For any other approval status please reach to Siva Kumar E-Mail ID sivakumar@realme.com</p>
 </div>
+
+<!--<script>-->
+<!--$(document).ready(function(){-->
+<!--  $("#myInput").on("keyup", function() {-->
+<!--    var value = $(this).val().toLowerCase();-->
+<!--    $("#myTable tr").filter(function() {-->
+<!--      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)-->
+<!--    });-->
+<!--  });-->
+<!--});-->
+<!--</script>-->
+
 
 <script>
 $(document).ready(function(){
+  // Hide the table initially
+  $("#myTable").hide();
+
   $("#myInput").on("keyup", function() {
     var value = $(this).val().toLowerCase();
+
+    // Show or hide the table based on search input
+    if (value !== "") {
+      $("#myTable").show();
+    } else {
+      $("#myTable").hide();
+    }
+
+    // Filter and display the matching rows
     $("#myTable tr").filter(function() {
       $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
     });

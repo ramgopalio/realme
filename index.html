@@ -56,8 +56,8 @@
 
             <br>
 
-            <h2> Flash Tool Access Request Approval Status</h2>
-            <p> Search below with MAC ID </p>
+            <h2> Part DOA Approval Status</h2>
+            <p> Search below with Unique ID </p>
 
             <br>
             <input class="form-control" id="myInput" type="text" placeholder="Enter MAC ID">
@@ -67,7 +67,11 @@
                 <div id="createFormContainer">
                     <br>
                     <button class="btn btn-primary" id="createFormBtn">Submit Form</button>
+
                     <br>
+
+                    <br>
+
                 </div>
             </div>
 
@@ -210,32 +214,49 @@
       });
     });
 
+
+
+
+  $(document).ready(function() {
     // Event handler for "Create Form" button click
     $(document).on("click", "#createFormBtn", function() {
-      var popup = window.open(
-        "",
-        "FormPopup",
-        "width=800,height=600,scrollbars=yes,resizable=yes"
-      );
-
+      // Get the iframe URL
       var iframeUrl =
-        "https://docs.google.com/forms/d/e/1FAIpQLSd-EwsMcFhBGiZhq-bzcfOxVPj0wiQ5J2jtxY-p6TVJkSOFew/viewform?embedded=true";
-      var iframe =
-        '<iframe src="' +
-        iframeUrl +
-        '" width="100%" height="100%" style="border:0;"></iframe>';
+        "https://docs.google.com/forms/d/e/1FAIpQLSeRYkVtx9aLq4FfWCGbeB4crKuo-dd9z8DjUSO7q-v2KYWLLg/viewform?";
 
-      popup.document.write(iframe);
-
-      var closePopupBtn =
-        '<button id="closePopupBtn">Close Popup</button>';
-      popup.document.write(closePopupBtn);
-
-      $(popup.document).on("click", "#closePopupBtn", function() {
-        popup.close();
-      });
+      // Open the URL in a new tab/window
+      window.open(iframeUrl, "_blank");
     });
   });
+
+
+<!--    // Event handler for "Create Form" button click-->
+<!--    $(document).on("click", "#createFormBtn", function() {-->
+<!--      var popup = window.open(-->
+<!--        "",-->
+<!--        "FormPopup",-->
+<!--        "width=800,height=600,scrollbars=yes,resizable=yes"-->
+<!--      );-->
+
+<!--      var iframeUrl =-->
+<!--        "https://docs.google.com/forms/d/e/1FAIpQLSeRYkVtx9aLq4FfWCGbeB4crKuo-dd9z8DjUSO7q-v2KYWLLg/viewform?embedded=true";-->
+<!--      var iframe =-->
+<!--        '<iframe src="' +-->
+<!--        iframeUrl +-->
+<!--        '" width="100%" height="100%" style="border:0;"></iframe>';-->
+
+<!--      popup.document.write(iframe);-->
+
+<!--      var closePopupBtn =-->
+<!--        '<button id="closePopupBtn">Close Popup</button>';-->
+<!--      popup.document.write(closePopupBtn);-->
+
+<!--      $(popup.document).on("click", "#closePopupBtn", function() {-->
+<!--        popup.close();-->
+<!--      });-->
+<!--    });-->
+  });
+
 </script>
     <br>
     <div class="container text-center">
@@ -250,6 +271,16 @@
       $.getJSON("https://api.ipify.org?format=json", function(data) {
         var ipAddress = data.ip;
         $("#ipAddress").text(ipAddress);
+      });
+    });
+  </script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+    $(document).ready(function() {
+      // Fetch the hit count from counter.php
+      $.get("counter.php", function(data) {
+        // Update the hit count on the webpage
+        $("#hitCount").text("Hit Count: " + data);
       });
     });
   </script>

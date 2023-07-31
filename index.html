@@ -8,6 +8,11 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script src="script.js"></script>
+
     <style>
         html, body {
                 height: 100%;
@@ -30,8 +35,11 @@
 
             }
         </style>
+
 </head>
+
 </head>
+
 <body>
 
 <div class="container">
@@ -99,175 +107,15 @@
 
         <br>
 
+        <br>
+
+        <br>
+
+        <br>
 
         <p9 class="italic-small">if any user login issues, please reach out to your RTTS  </p9>
 
-
-
     </div>
-
-    <script>
-  $(document).ready(function() {
-    var loggedInUser; // Stores the currently logged in user
-
-    // Data array for users and corresponding data
-    var userData = [
-      {
-        username: "ram",
-        password: "gopal",
-        data: [
-     { approvalid: "RMPDOA-31072023001", region: "South", asp: "F1_info", sccode: "IN61-001", caseid: "IN68-023-R230725001", dcno: "IN68-023-SP230726001", boxc: "Damaged", doac: "Non-Functional", symptom: "MAC1", status: "Blank Display", statusby: "siva" },
-          // More data for user1...
-        ]
-      },
-      {
-        username: "siva",
-        password: "kumar",
-        data: [
-          { approvalid: "RMPDOA-31072023001", region: "South", asp: "F1_info", sccode: "IN61-001", caseid: "IN68-023-R230725001", dcno: "IN68-023-SP230726001", boxc: "Damaged", doac: "Non-Functional", symptom: "MAC1", status: "Blank Display", statusby: "siva" },
-          // More data for user2...
-        ]
-      }
-
-      // Add more users as needed...
-    ];
-
-    // Function to display the data for the authenticated user
-    function displayUserData(username) {
-      var user = userData.find(function(user) {
-        return user.username === username;
-      });
-
-      if (user) {
-        var dataRows = "";
-        user.data.forEach(function(data) {
-          dataRows += "<tr>";
-          dataRows += "<td>" + data.approvalid + "</td>";
-          dataRows += "<td>" + data.region + "</td>";
-          dataRows += "<td>" + data.asp + "</td>";
-          dataRows += "<td>" + data.sccode + "</td>";
-          dataRows += "<td>" + data.caseid + "</td>";
-          dataRows += "<td>" + data.dcno + "</td>";
-          dataRows += "<td>" + data.boxc + "</td>";
-          dataRows += "<td>" + data.doac + "</td>";
-          dataRows += "<td>" + data.symptom + "</td>";
-          dataRows += "<td>" + data.status + "</td>";
-          dataRows += "<td>" + data.statusby + "</td>";
-          dataRows += "</tr>";
-        });
-
-        $("#myTable").html(dataRows);
-        $("#loginForm").hide();
-        $("#dataContainer").show();
-      }
-    }
-
-    // Event handler for login button click
-    $("#loginBtn").on("click", function() {
-      var username = $("#username").val();
-      var password = $("#password").val();
-
-      // Perform basic authentication
-      var authenticatedUser = userData.find(function(user) {
-        return user.username === username && user.password === password;
-      });
-
-      if (authenticatedUser) {
-        loggedInUser = username;
-        displayUserData(username);
-      } else {
-        alert("Invalid username or password");
-      }
-    });
-
-    // Event handler for logout button click
-    $("#logoutBtn").on("click", function() {
-      loggedInUser = undefined;
-      $("#myTable").html(""); // Clear the table
-      $("#dataContainer").hide();
-      $("#loginForm").show();
-      $("#username").val("");
-      $("#password").val("");
-    });
-
-    // Search functionality (same as before)
-    $("#myInput").on("keyup", function() {
-      var value = $(this).val().toLowerCase();
-      $("#myTable tr").filter(function() {
-        $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1);
-      });
-    });
-
-
-
-
-  $(document).ready(function() {
-    // Event handler for "Create Form" button click
-    $(document).on("click", "#createFormBtn", function() {
-      // Get the iframe URL
-      var iframeUrl =
-        "https://docs.google.com/forms/d/e/1FAIpQLSeRYkVtx9aLq4FfWCGbeB4crKuo-dd9z8DjUSO7q-v2KYWLLg/viewform?";
-
-      // Open the URL in a new tab/window
-      window.open(iframeUrl, "_blank");
-    });
-  });
-
-
-<!--    // Event handler for "Create Form" button click-->
-<!--    $(document).on("click", "#createFormBtn", function() {-->
-<!--      var popup = window.open(-->
-<!--        "",-->
-<!--        "FormPopup",-->
-<!--        "width=800,height=600,scrollbars=yes,resizable=yes"-->
-<!--      );-->
-
-<!--      var iframeUrl =-->
-<!--        "https://docs.google.com/forms/d/e/1FAIpQLSeRYkVtx9aLq4FfWCGbeB4crKuo-dd9z8DjUSO7q-v2KYWLLg/viewform?embedded=true";-->
-<!--      var iframe =-->
-<!--        '<iframe src="' +-->
-<!--        iframeUrl +-->
-<!--        '" width="100%" height="100%" style="border:0;"></iframe>';-->
-
-<!--      popup.document.write(iframe);-->
-
-<!--      var closePopupBtn =-->
-<!--        '<button id="closePopupBtn">Close Popup</button>';-->
-<!--      popup.document.write(closePopupBtn);-->
-
-<!--      $(popup.document).on("click", "#closePopupBtn", function() {-->
-<!--        popup.close();-->
-<!--      });-->
-<!--    });-->
-  });
-
-</script>
-    <br>
-    <div class="container text-center">
-        <p> <span id="ipAddress"></span></p>
-    </div>
-
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script>
-    $(document).ready(function() {
-      // Get the IP address using an API
-      $.getJSON("https://api.ipify.org?format=json", function(data) {
-        var ipAddress = data.ip;
-        $("#ipAddress").text(ipAddress);
-      });
-    });
-  </script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script>
-    $(document).ready(function() {
-      // Fetch the hit count from counter.php
-      $.get("counter.php", function(data) {
-        // Update the hit count on the webpage
-        $("#hitCount").text("Hit Count: " + data);
-      });
-    });
-  </script>
 
 </body>
 </html>

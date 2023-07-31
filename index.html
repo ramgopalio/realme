@@ -99,7 +99,7 @@
         <br>
 
 
-        <p9 class="italic-small">Allow pop-up to submit form, if any user login issues, please reach out to  v-kotipatruni.sivakumar@realme.com  </p9>
+        <p9 class="italic-small">if any user login issues, please reach out to your RTTS  </p9>
 
 
 
@@ -116,16 +116,17 @@
         password: "gopal",
         data: [
           {
-            Timestamp: "ram@gmail.com",
-            email: "ram@gmail.com",
-            mobile: "9989894894",
-            scCode: "IN61-001",
-            scName: "SC1",
-            state: "State1",
-            city: "City1",
-            rcsmId: "ID1",
-            macAddress: "MAC1",
-            status: "Approved"
+            approvalid: "ram@gmail.com",
+            region: "ram@gmail.com",
+            asp: "9989894894",
+            sccode: "IN61-001",
+            caseid: "SC1",
+            dcno: "State1",
+            boxc: "City1",
+            doac: "ID1",
+            symptom: "MAC1",
+            status: "Approved",
+            statusby: "siva"
           },
           // More data for user1...
         ]
@@ -135,15 +136,17 @@
         password: "kumar",
         data: [
           {
-            email: "user@gmail.com",
-            mobile: "9876543210",
-            scCode: "IN61-002",
-            scName: "SC2",
-            state: "State2",
-            city: "City2",
-            rcsmId: "ID2",
-            macAddress: "MAC2",
-            status: "Approved"
+            approvalid: "ram@gmail.com",
+            region: "ram@gmail.com",
+            asp: "9989894894",
+            sccode: "IN61-001",
+            caseid: "SC1",
+            dcno: "State1",
+            boxc: "City1",
+            doac: "ID1",
+            symptom: "MAC1",
+            status: "Approved",
+            statusby: "siva"
           },
           // More data for user2...
         ]
@@ -162,15 +165,17 @@
         var dataRows = "";
         user.data.forEach(function(data) {
           dataRows += "<tr>";
-          dataRows += "<td>" + data.email + "</td>";
-          dataRows += "<td>" + data.mobile + "</td>";
-          dataRows += "<td>" + data.scCode + "</td>";
-          dataRows += "<td>" + data.scName + "</td>";
-          dataRows += "<td>" + data.state + "</td>";
-          dataRows += "<td>" + data.city + "</td>";
-          dataRows += "<td>" + data.rcsmId + "</td>";
-          dataRows += "<td>" + data.macAddress + "</td>";
+          dataRows += "<td>" + data.approvalid + "</td>";
+          dataRows += "<td>" + data.region + "</td>";
+          dataRows += "<td>" + data.asp + "</td>";
+          dataRows += "<td>" + data.sccode + "</td>";
+          dataRows += "<td>" + data.caseid + "</td>";
+          dataRows += "<td>" + data.dcno + "</td>";
+          dataRows += "<td>" + data.boxc + "</td>";
+          dataRows += "<td>" + data.doac + "</td>";
+          dataRows += "<td>" + data.symptom + "</td>";
           dataRows += "<td>" + data.status + "</td>";
+          dataRows += "<td>" + data.statusby + "</td>";
           dataRows += "</tr>";
         });
 

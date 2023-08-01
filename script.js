@@ -121,10 +121,20 @@ $(document).ready(function() {
   });
 
     // // Event handler for "view status" button click Get a reference to the button element
-       const viewBtn = document.getElementById('viewBtn');
+//       const viewBtn = document.getElementById('viewBtn');
   // Function to handle the button click
+//    document.getElementById('viewBtn').addEventListener('click', function() {
+
+// Event handler for input change
+    document.getElementById('myInput').addEventListener('input', function() {
+      var viewBtn = document.getElementById('viewBtn');
+      // Enable the button only if the input has text
+      viewBtn.disabled = this.value.trim() === "";
+    });
+
+    // Event handler for "view status" button click
     document.getElementById('viewBtn').addEventListener('click', function() {
-      // 'script WEB_APP_URL'
+          // 'script WEB_APP_URL'
       var url = 'https://script.google.com/macros/s/AKfycbysAd50XRtXi82u0k_1hqxxhhCrelTJmoHSL1DFjbA-tKH7hI6ji0GXpLZtX1-GWhOP/exec';
 
       fetch(url)

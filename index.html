@@ -65,44 +65,54 @@
             <br>
 
             <h2> Part DOA Approval Status</h2>
-            <p> Search below with Unique ID </p>
+            <p> Search below with Case ID </p>
 
             <br>
-            <input class="form-control" id="myInput" type="text" placeholder="Enter Approval ID">
+            <input class="form-control" id="myInput" type="text" placeholder="Enter Case ID">
+
             <br>
             <!-- Add this inside the "dataContainer" div -->
             <div id="createFormContainer">
                 <div id="createFormContainer">
-                    <br>
-                    <button class="btn btn-primary" id="createFormBtn">Submit Form</button>
-                    <button class="btn btn-primary" id="viewFormBtn">View Status</button>
 
                     <br>
+                    <br>
+
+                    <button class="btn btn-primary" id="viewBtn">View Approval Status </button>
+                    <button class="btn btn-primary" id="createFormBtn">DOA Approval Request</button>
+
+                    <br>
+                    <br>
+
+                    <div id="responses"></div>
+
+                    <br>
+
                     <br>
 
                 </div>
             </div>
 
-            <table class="table table-bordered table-striped">
-                <thead>
-                <tr>
-                    <th>Approval ID</th>
-                    <th>Region</th>
-                    <th>ASP</th>
-                    <th>SC Code</th>
-                    <th>Case ID</th>
-                    <th>Delivery Challan No</th>
-                    <th>Box condition</th>
-                    <th>DOA category</th>
-                    <th>Symptom</th>
-                    <th>Status</th>
-                    <th>Approved By</th>
-                </tr>
-                </thead>
-                <tbody id="myTable">
-                <!-- Data Rows -->
-                </tbody>
-            </table>
+<!--            <table class="table table-bordered table-striped">-->
+<!--                <thead>-->
+<!--                <tr>-->
+<!--                    <th style="text-align: center;">Approval ID</th>-->
+<!--                    <th style="text-align: center;">Region</th>-->
+<!--                    <th style="text-align: center;">ASP</th>-->
+<!--                    <th style="text-align: center;">SC Code</th>-->
+<!--                    <th style="text-align: center;">Case ID</th>-->
+<!--                    <th style="text-align: center;">Delivery Challan No</th>-->
+<!--                    <th style="text-align: center;">Box condition</th>-->
+<!--                    <th style="text-align: center;">DOA category</th>-->
+<!--                    <th style="text-align: center;">Symptom</th>-->
+<!--                    <th style="text-align: center;">Status</th>-->
+<!--                    <th style="text-align: center;">Approved By</th>-->
+<!--                </tr>-->
+<!--                </thead>-->
+<!--                <tbody id="myTable">-->
+<!--                &lt;!&ndash; Data Rows &ndash;&gt;-->
+<!--                </tbody>-->
+<!--            </table>-->
         </div>
 
         <br>

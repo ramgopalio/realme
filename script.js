@@ -119,6 +119,12 @@ $(document).ready(function() {
     // Open the URL in a new tab/window
     window.open(iframeUrl, "_blank");
   });
+      // Event handler for input change
+      document.getElementById('myInput').addEventListener('input', function() {
+        var viewBtn = document.getElementById('viewBtn')
+        // Enable the button only if the input has text
+        viewBtn.disabled = this.value.trim() === "";
+      });
 
     // // Event handler for "view status" button click Get a reference to the button element
 //       const viewBtn = document.getElementById('viewBtn');
@@ -134,6 +140,7 @@ $(document).ready(function() {
 
     // Event handler for "view status" button click
     document.getElementById('viewBtn').addEventListener('click', function() {
+    var inputCaseID = document.getElementById('myInput').value.trim();
           // 'script WEB_APP_URL'
       var url = 'https://script.google.com/macros/s/AKfycbysAd50XRtXi82u0k_1hqxxhhCrelTJmoHSL1DFjbA-tKH7hI6ji0GXpLZtX1-GWhOP/exec';
 
@@ -142,6 +149,9 @@ $(document).ready(function() {
         .then(data => {
           var responsesDiv = document.getElementById('responses');
           responsesDiv.innerHTML = ''; // Clear any existing content
+           // Filter the data to get only the matched results
+
+                    var filteredData = data.filter(item => item['Case ID'] === inputCaseID);
 
           // Create the table element
           var table = document.createElement('table');
@@ -163,7 +173,7 @@ $(document).ready(function() {
 
           // Create and append the table body rows
           var tableBody = document.createElement('tbody');
-          data.forEach(response => {
+          filteredData.forEach(response => {
             var bodyRow = document.createElement('tr');
             Object.values(response).forEach(value => {
               var bodyCell = document.createElement('td');

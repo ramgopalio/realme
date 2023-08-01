@@ -124,8 +124,8 @@ $(document).ready(function() {
        const viewBtn = document.getElementById('viewBtn');
   // Function to handle the button click
     document.getElementById('viewBtn').addEventListener('click', function() {
-      // Replace 'script WEB_APP_URL'
-      var url = 'https://script.googleusercontent.com/macros/echo?user_content_key=VG_mXWDZNBPWn38yiUYjC4BePahsopJPrA0MUzfDHpoy25Sb9NqYuKIdAWRd-1ZiRDg_3I0wcYuPMfok44WAZnAIJYuju0ZJm5_BxDlH2jW0nuo2oDemN9CCS2h10ox_1xSncGQajx_ryfhECjZEnNtRdb2hoWwaMSIrbr3248n99FsTW8BsD2ePaWVQ60LU11Rr0_8ISBSN3d59RaCLsaqA4FTr3yhzeAe01Vm9pUgLQkXXhw1GWA&lib=MfZcm-FYViVzJm1zd5oUr0JvB_XMCaE9s';
+      // 'script WEB_APP_URL'
+      var url = 'https://script.google.com/macros/s/AKfycbysAd50XRtXi82u0k_1hqxxhhCrelTJmoHSL1DFjbA-tKH7hI6ji0GXpLZtX1-GWhOP/exec';
 
       fetch(url)
         .then(response => response.json())
